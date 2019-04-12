@@ -1,11 +1,11 @@
 package com.detroitlabs.biometricpromptexample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
 import kotlinx.android.synthetic.main.activity_prompt_example.*
-import java.util.concurrent.Executors
+import java.util.concurrent.Executor
 
 class PromptExampleActivity : AppCompatActivity() {
 
@@ -18,38 +18,32 @@ class PromptExampleActivity : AppCompatActivity() {
 
     private fun showBiometricPrompt() {
 
-        val executor = Executors.newSingleThreadExecutor()
+        val executor = Executor { it.run() }
 
         val callback = object : BiometricPrompt.AuthenticationCallback() {
 
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-                this@PromptExampleActivity.runOnUiThread {
                     Toast.makeText(
                         this@PromptExampleActivity,
                         getString(R.string.biometric_prompt_error, errString, errorCode),
                         Toast.LENGTH_LONG
                     ).show()
-                }
             }
 
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                this@PromptExampleActivity.runOnUiThread {
                     Toast.makeText(
                         this@PromptExampleActivity,
                         getString(R.string.biometric_prompt_succeeded, result.toString()),
                         Toast.LENGTH_LONG
                     ).show()
-                }
             }
 
             override fun onAuthenticationFailed() {
-                this@PromptExampleActivity.runOnUiThread {
                     Toast.makeText(
                         this@PromptExampleActivity,
                         getString(R.string.biometric_prompt_failed),
                         Toast.LENGTH_LONG
                     ).show()
-                }
             }
         }
 
