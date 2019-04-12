@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Biometric Prompt Example</string>
+    <string name="show_prompt_button">Show Biometric Prompt</string>
+    <string name="biometric_prompt_error">Error: %1$s (%2$d)</string>
+    <string name="biometric_prompt_succeeded">Success: %s</string>
+    <string name="biometric_prompt_failed">Failed.</string>
+</resources>
