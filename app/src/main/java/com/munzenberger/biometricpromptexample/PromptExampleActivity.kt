@@ -1,4 +1,4 @@
-package com.detroitlabs.biometricpromptexample
+package com.munzenberger.biometricpromptexample
 
 import android.os.Bundle
 import android.widget.Toast
