@@ -4,4 +4,9 @@
     <string name="biometric_prompt_error">Error: %1$s (%2$d)</string>
     <string name="biometric_prompt_succeeded">Success: %s</string>
     <string name="biometric_prompt_failed">Failed.</string>
+    <string name="plain_text_to_encrypt">Plain text</string>
+    <string name="encrypt_with_biometrics">Encrypt with Biometrics</string>
+    <string name="decrypt_with_biometrics">Decrypt with Biometrics</string>
+    <string name="initialization_vector">Initialization vector</string>
+    <string name="cipher_text">Cipher text</string>
 </resources>
