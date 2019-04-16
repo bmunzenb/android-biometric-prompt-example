@@ -13,6 +13,7 @@ import androidx.core.widget.addTextChangedListener
 import kotlinx.android.synthetic.main.activity_crypto_example.*
 import java.security.KeyStore
 import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.spec.IvParameterSpec
@@ -62,7 +63,7 @@ class CryptoExampleActivity : AppCompatActivity() {
 
         val cryptoObject = BiometricPrompt.CryptoObject(encryptionCipher)
 
-        val executor = Executor { it.run() }
+        val executor = Executors.newSingleThreadExecutor()
 
         val callback = object : BiometricPrompt.AuthenticationCallback() {
 
@@ -141,7 +142,7 @@ class CryptoExampleActivity : AppCompatActivity() {
 
         val cryptoObject = BiometricPrompt.CryptoObject(decryptionCipher)
 
-        val executor = Executor { it.run() }
+        val executor = Executors.newSingleThreadExecutor()
 
         val callback = object : BiometricPrompt.AuthenticationCallback() {
 
